@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml-vehicle-monitor"
+version = "0.1.0"
+description = "Monitoreo de publicaciones de vehiculos en Mercado Libre con reporte diario"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "python-dotenv>=1.0.1",
+  "gspread>=6.1.4",
+  "google-auth>=2.38.0",
+  "requests>=2.32.3",
+]
+
+[project.scripts]
+ml-vehicle-monitor = "ml_vehicle_monitor.monitor:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
